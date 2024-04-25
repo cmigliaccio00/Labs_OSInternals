@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\input{packages}
+
+\title{\vspace{-1cm}
+\textbf{[OS Internals] LAB 2.2 - QUESITI}\\ 
+\vspace{0.3cm}
+\small{\textit{Esempi domande d'esame}}}
+\author{}
+\date{}
+
+\begin{document}
+    \maketitle
+
+    \section*{Quesito \#1}
+    {\color{blue}
+    Descrivere tramite pseudocodice l'implementazione di \texttt{ram\_stealmem(npages)} in OS/161 e motivare perch\'e questa effettua allocazione di memoria contigua. 
+    }\\
+    
+    \noindent
+    Una pseudo-implementazione di \texttt{ram\_stealmem(npages)} \`e la seguente: 
+    \begin{verbatim}
+        function ram_stealmem(npages): ptr addr
+            size = npages * DIM_SINGOLA_PAGINA;
+            if (primo_ind_libero+size>last_available_address)
+                return 0;
+            addr=primo_ind_libero; 
+            primo_ind_libero=addr+size;
+            return addr; 
+        end
+    \end{verbatim}
+    L'allocazione di memoria che risulta dall'utilizzo (lato utente e lato kernel) di tale funzione \`e contigua perch\'e ad ogni chiamata di \texttt{ram\_stealmem()} il puntatore alla memoria disponibile (primo indirizzo utilizzabile) viene aumentato di una dimensione pari allo spazio richiesto per \texttt{npages}, in questo modo, finita la porzione di memoria messa a disposizione per un processo, comincia quella che occuper\`a (potenzialmente) un altro processo.\\
+    Inoltre con il solo utilizzo di \texttt{ram\_stealmem()} - senza gestire quindi il rilascio dello spazio allocato - il SO proceder\`a ad allocare finch\`e c'\`e spazio disponibile fino a lanciare un'eccezione di \texttt{Out of memory}.    
+
+    \section*{Quesito \#2}
+    {\color{blue}
+    Motivare l'utilizzo e la differenza tra indirizzi fisici e virtuali nella gestione della memoria di OS/161. Fornire almeno un esempio per entrambi i casi.
+    }
+    
+
+    \section*{Quesito \#3}
+    {\color{blue}
+     Descrivere il flow e le chiamate a funzione necessarie a liberare l'address space di un processo X che termina e allocare un nuovo address space di un processo Y
+    }
+
+    \begin{enumerate}
+        \item as\_destroy $\to$ free\_ppages()
+        \item 
+    \end{enumerate}
+   
+
+    
+    
+\end{document}
