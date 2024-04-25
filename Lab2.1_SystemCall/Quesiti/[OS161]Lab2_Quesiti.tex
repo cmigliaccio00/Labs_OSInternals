@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\input{packages}
+
+\title{\vspace{-1cm}
+\textbf{[OS Internals] LAB 2.1 - QUESITI}\\ 
+\vspace{0.3cm}
+\small{\textit{Esempi domande d'esame}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{-2cm}
+\section{Quesito \#1 {\small\color{red} (serve OS161 - Memory???)}}
+{\color{blue}
+Si ha la seguente implementazione di \texttt{sys\_write()}:
+\begin{verbatim}
+    int sys_write(int fd, userptr_t buf_ptr, size_t size) {
+        int i;
+        char *p = (char *)buf_ptr;
+        if (fd!=STDOUT_FILENO && fd!=STDERR_FILENO) {
+            kprintf("sys_write supported only to stdout\n");
+            return -1;
+        }
+        for (i=0; i<(int)size; i++)
+            putch(p[i]);
+        return (int)size;
+    }
+\end{verbatim}
+
+\noindent
+Supponendo che standard input, output ed error siano mappati alla console (quindi non \`e
+possibile nessun loro reindirizzamento a file), si dica se \`e possibile sostituire la gestione di
+stdout/stderr mediante il ciclo for con uno o pi\`u dei frammenti di codice. Per ogni alternativa
+rispondere s\`i/no e fornire una motivazione.
+
+}
+
+\section{Quesito \#2}
+{
+\color{blue}{
+Si supponga un sistema OS/161. Descrivere la struttura \textbf{trapframe} e il suo utilizzo durante le
+chiamate di sistema. In particolare, indicare la funzione del registro \texttt{v0} dell'architettura MIPS.
+}
+}
+
+\noindent
+In OS161, la \textbf{trapframe} \`e una struttura (\textbf{\texttt{struct}} del C) i cui campi sono associati ai registri dell'architettura del microprocessore MIPS; viene utilizzata per salvare le informazioni dei registri della CPU nel momento in cui nel sistema si verifichi un'\textbf{eccezione}.  Essa \`e utilizzata, tra le altre cose, anche durante le chiamate di sistema (il microprocessore solleva un'eccezione verso il SO) e contiene - in questo caso - le informazioni di supporto utili alla loro gestione. La trapframe viene utilizzata nello specifico dal \textbf{dispatcher} delle system call integrato nel kernel che prende in esame: 
+\begin{enumerate}
+    \item Il campo \texttt{tf->v0}, per contenere (prima) il codice della syscall (dal $\mu$P al kernel) e dopo l'esecuzione della syscall (dal kernel al $\mu$P) il \textbf{valore di ritorno}.
+    \item I campi da \texttt{tf->a0} a \texttt{tf->a2} (associati ai rispettivi registri \texttt{a0-a2}) contengono gli \textbf{argomenti} della chiamata di sistema; 
+    \item Il campo \texttt{tf->a3}, associato al relativo registro MIPS, contiene alla fine dell'esecuzione della syscall, eventuali condizione di errore.
+\end{enumerate} 
+
+\section{Quesito \#3}
+{\color{blue}
+    Si supponga un sistema OS/161. \`E necessario l'utilizzo di una chiamata di sistema per la
+scrittura su stdin (es. sys\_write) per un processo utente? \`E  possibile utilizzare \texttt{kprintf()}
+invece? Motivare le risposte.
+}\\
+
+\noindent
+In \textsc{OS161} per poter scrivere sullo stream \texttt{stdin} occorre che ci sia una system call apposita che permetta di gestire il processo utente. Come tanti altri componenti, non \`e implementata in OS161, va realizzata seguendo lo schema ad esempio della \texttt{write()} dell'ANSI/C. Una \texttt{kprintf()} non potrebbe essere impiegata in quanto \`e riservata all'utilizzo da parte del kernel.
+
+\end{document}
