@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  24 APR 2024 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  6 MAY 2024 09:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/2__[02GRSOV]_Programmazione_di_Sistema/OS_Internals/PdS_OSInternals/Lab2.2/[OS161]Lab2.2_Quesiti.tex"
-(c:/Users/carlo/Desktop/PoliTO/[LM-32]_Laurea Magistrale/IAnno__2023_2024/2__[02GRSOV]_Programmazione_di_Sistema/OS_Internals/PdS_OSInternals/Lab2.2/[OS161]Lab2.2_Quesiti.tex
+**c:/Users/carlo/Desktop/Ubuntu_VM/OS_Internals/Labs_OSInternals/Lab2.2_Memory/Quesiti/[OS161]Lab2.2_Quesiti.tex
+(c:/Users/carlo/Desktop/Ubuntu_VM/OS_Internals/Labs_OSInternals/Lab2.2_Memory/Quesiti/[OS161]Lab2.2_Quesiti.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -636,27 +636,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+
+Overfull \hbox (0.43622pt too wide) in paragraph at lines 45--46
+[]\T1/cmr/bx/n/12 Indirizzo vir-tuale \T1/cmr/m/n/12 è ad es-em-pio il parametro \T1/cmtt/m/n/12 addr\T1/cmr/m/n/12 , pas-sato alla fun-zione \T1/cmtt/m/n/12 free_kpages()\T1/cmr/m/n/12 ;
+ []
+
 [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./[OS161]Lab2.2_Quesiti.aux)
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] (./[OS161]Lab2.2_Quesiti.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 21866 strings out of 474116
- 431190 string characters out of 5747718
- 1933190 words of memory out of 5000000
- 43822 multiletter control sequences out of 15000+600000
- 571711 words of font info for 74 fonts, out of 8000000 for 9000
+ 21876 strings out of 474116
+ 431152 string characters out of 5747718
+ 1935190 words of memory out of 5000000
+ 43828 multiletter control sequences out of 15000+600000
+ 573508 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,96p,2528b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on [OS161]Lab2.2_Quesiti.pdf (1 page, 109377 bytes).
+ 99i,6n,96p,2463b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on [OS161]Lab2.2_Quesiti.pdf (2 pages, 148343 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
